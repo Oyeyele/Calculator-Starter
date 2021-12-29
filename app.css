@@ -72,13 +72,13 @@ button:hover {
 
 .calculator-output {
   font-size: 1.2rem;
-  color: rgb(148, 161, 161);
+  color: whitesmoke;
   height: 1rem;
 }
 
 .calculator-input {
   font-size: 1.5rem;
-  color: rgb(148, 161, 161);
+  color: whitesmoke;
   height: 2rem;
   margin-bottom: 8px;
 }

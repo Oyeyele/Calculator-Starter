@@ -8,7 +8,7 @@ class Calculator {
   clear() {
     this.currentOperand = "";
     this.previousOperand = "";
-    this.operation = undefined;
+    this.operation = "";
   }
 
   // to delete a single number
@@ -59,14 +59,25 @@ class Calculator {
         return;
     }
     this.currentOperand = computation;
-    this.operation = undefined;
+    this.operation = "";
     this.previousOperand = "";
   }
 
   getDisplayNumber(number) {
-    const floatNumber = parseFloat(number);
-    if (isNaN(floatNumber)) return;
-    return floatNumber.toLocaleString("en");
+    const stringNumber = number.toString();
+    const integerDigits = parseFloat(stringNumber.split(".")[0]); // the number before the decimal
+    const decimalDigits = parseFloat(stringNumber.split(".")[1]); // the number after the decimal
+    let integerDisplay;
+    if (isNaN(integerDigits)) {
+      integerDisplay = "";
+    } else {
+      integerDisplay = integerDigits.toLocaleString("en");
+    }
+    if (decimalDigits != null) {
+      return `${integerDisplay}.${decimalDigits}`;
+    } else {
+      return integerDisplay;
+    }
   }
 
   // this will update the value inside of our output
