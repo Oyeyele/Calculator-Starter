@@ -68,7 +68,7 @@ class Calculator {
     const integerDigits = parseFloat(stringNumber.split(".")[0]); // the number before the decimal
     const decimalDigits = parseFloat(stringNumber.split(".")[1]); // the number after the decimal
     let integerDisplay;
-    if (isNaN(integerDigits)) {
+    if (parseFloat(integerDigits) !== +integerDigits) {
       integerDisplay = "";
     } else {
       integerDisplay = integerDigits.toLocaleString("en");
